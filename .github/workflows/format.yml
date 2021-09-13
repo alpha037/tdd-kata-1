@@ -1,12 +1,6 @@
 name: Google java formatter
 
-on:
-  push:
-    paths:
-      - "**/*.java"
-  pull_request:
-    paths:
-      - "**/*.java"
+on: [push]
 
 jobs:
   format:
