@@ -59,11 +59,16 @@ public class StringCalculatorTest {
 	
 	@AfterClass
 	public static void testWithGetAllCount() {
-		assertEquals(9, StringCalculator.getCalledCount());
+		assertEquals(10, StringCalculator.getCalledCount());
 	}
 	
 	@Test
 	public void testWithNumbersBiggerThanThousand() {
 		assertEquals(2, StringCalculator.add("2,1000"));
+	}
+	
+	@Test
+	public void testWithVariableLengthDelimiters() {
+		assertEquals(6, StringCalculator.add("//[***]\n1***2***3"));
 	}
 }

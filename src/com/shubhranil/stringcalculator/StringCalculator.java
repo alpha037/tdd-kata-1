@@ -41,7 +41,9 @@ public class StringCalculator {
 		int sum = 0;
 		String negativeNumbers = "";
 		
-		for (String number : numbersList) {			
+		for (String number : numbersList) {
+			if (number.isBlank()) continue;
+			
 			int numberAsInt = Integer.parseInt(number);
 			negativeNumbers +=
 				numberAsInt < 0
