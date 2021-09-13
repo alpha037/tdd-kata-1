@@ -31,7 +31,23 @@ public class StringCalculator {
 	
 	private int sum(String[] numbersList) {
 		int sum = 0;
-		for (String number : numbersList) sum += Integer.parseInt(number);
+		String negativeNumbers = "";
+		
+		for (String number : numbersList) {
+			int numberAsInt = Integer.parseInt(number);
+			negativeNumbers +=
+				numberAsInt < 0
+				? (negativeNumbers.length() == 0 ? number : "," + number)
+				: "";
+			
+			sum += numberAsInt;
+		}
+		
+		if (negativeNumbers.length() > 0)
+			throw new IllegalArgumentException(
+				"Negatives not allowed: " + negativeNumbers
+			);
+		
 		return sum;
 	}
 }
