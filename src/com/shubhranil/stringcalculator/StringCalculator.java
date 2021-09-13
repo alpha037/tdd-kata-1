@@ -41,14 +41,14 @@ public class StringCalculator {
 		int sum = 0;
 		String negativeNumbers = "";
 		
-		for (String number : numbersList) {
+		for (String number : numbersList) {			
 			int numberAsInt = Integer.parseInt(number);
 			negativeNumbers +=
 				numberAsInt < 0
 				? (negativeNumbers.length() == 0 ? number : "," + number)
 				: "";
 			
-			sum += numberAsInt;
+			if (numberAsInt < 1000) sum += numberAsInt;
 		}
 		
 		if (negativeNumbers.length() > 0)
