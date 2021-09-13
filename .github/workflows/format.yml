@@ -1,6 +1,9 @@
 name: Google java formatter
 
-on: [push]
+on:
+  push:
+    paths:
+      - "src/**"
 
 jobs:
   format:
