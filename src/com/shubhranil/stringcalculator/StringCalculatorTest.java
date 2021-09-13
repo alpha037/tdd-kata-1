@@ -24,4 +24,9 @@ public class StringCalculatorTest {
 	public void testWithMultipleNumbers() {
 		assertEquals(15, new StringCalculator().add("1,2,3,4,5"));
 	}
+	
+	@Test
+	public void testWithNewLineDelimeter() {
+		assertEquals(6, new StringCalculator().add("1\n2,3"));
+	}
 }
