@@ -4,17 +4,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
-	private final String DEFAULT_DELIMITER_REGEX = "[,\n]";
-	private final String MULTIPLE_DELIMITER_REGEX = "//(.*)\n(.*)";
+	private static final String DEFAULT_DELIMITER_REGEX = "[,\n]";
+	private static final String MULTIPLE_DELIMITER_REGEX = "//(.*)\n(.*)";
 	
-	public int add(String numbers) {
+	private static int calledCount = 0;
+	
+	public static int getCalledCount() {
+		return calledCount;
+	}
+	
+	public static int add(String numbers) {
+		++calledCount;
+		
 		if (numbers.equals("")) return 0;
 		
 		String[] numbersList = split(numbers);
 		return sum(numbersList);
 	}
 	
-	private String[] split(String numbers) {
+	private static String[] split(String numbers) {
 		String delimiter = DEFAULT_DELIMITER_REGEX;
 		
 		if (numbers.startsWith("//")) {
@@ -29,7 +37,7 @@ public class StringCalculator {
 		return numbers.split(delimiter);
 	}
 	
-	private int sum(String[] numbersList) {
+	private static int sum(String[] numbersList) {
 		int sum = 0;
 		String negativeNumbers = "";
 		
