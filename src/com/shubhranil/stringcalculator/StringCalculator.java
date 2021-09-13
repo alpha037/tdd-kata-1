@@ -50,7 +50,7 @@ public class StringCalculator {
 				? (negativeNumbers.length() == 0 ? number : "," + number)
 				: "";
 			
-			if (numberAsInt < 1000) sum += numberAsInt;
+			if (numberAsInt <= 1000) sum += numberAsInt;
 		}
 		
 		if (negativeNumbers.length() > 0)

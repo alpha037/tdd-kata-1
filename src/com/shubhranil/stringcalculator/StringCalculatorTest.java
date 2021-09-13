@@ -64,7 +64,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void testWithNumbersBiggerThanThousand() {
-		assertEquals(2, StringCalculator.add("2,1000"));
+		assertEquals(2, StringCalculator.add("2,1001"));
 	}
 	
 	@Test
